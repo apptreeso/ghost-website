@@ -1,0 +1,56 @@
+@font-face {
+  font-family: jpweb;
+  src: url("./assets/Fonts/ProximaNova/ProximaNova-Black.ttf");
+} 
+
+body{
+  background-color: #16161A;
+  margin: 0 auto;
+  padding: 0;
+  font-family: jpweb;
+  /* line-height: 1; */
+  /* font-style: normal;
+font-weight: normal; */
+}
+
+
+
+.maincontainer {
+  margin: 0 auto;
+  max-width: 1446px;
+  background-color: #16161A;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1110px;
+  padding: 0 20px;
+}
+
+.rewardcontainer {
+  margin: 0 auto;
+  max-width: 1446px;
+  color: #fff;
+}
+
+.appbarcolor {
+  background-color: aqua;
+}
+
+.nav-container {
+  margin: auto;
+  max-width: 1110px;
+  color: #fff;
+  background-color: #16161A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  padding: 0 20px;
+}
+
+.routerlink {
+  text-decoration: none;
+  color: #fff;
+}
