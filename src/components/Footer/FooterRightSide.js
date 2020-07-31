@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     padding: 0,
     marginBottom: 12,
+    minWidth: 60,
     color: "rgba(255, 255, 255, 0.6)",
   },
 }));

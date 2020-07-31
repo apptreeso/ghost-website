@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   logo: {
-    width: 25,
+    width: 26,
     height: 30,
   },
   logoText: {
