@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     color: "#94A1B2",
-    fontSize: FontSize.m,
+    fontSize: FontSize.ml,
     width: 510,
     textAlign: "center",
   },

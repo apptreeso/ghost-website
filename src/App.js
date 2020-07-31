@@ -28,6 +28,9 @@ const theme = createMuiTheme({
       socialIconColor: "#72757E",
     },
   },
+  typography: {
+    fontFamily: ["ProximaNovaRegular"].join(","),
+  },
 });
 
 function App() {
@@ -44,7 +47,6 @@ function App() {
             <Route exact component={Faq} path="/faq" />
             <Route exact component={Faq2} path="/faq2" />
           </Switch>
-          <Footer />
         </Router>
       </div>
     </MuiThemeProvider>

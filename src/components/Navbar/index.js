@@ -12,6 +12,8 @@ import CommunityMenu from "./Menu/CommunityMenu/index";
 import Logo from "./Logo";
 import GetGhostBtn from "./GetGhostBtn";
 import { Link } from "react-router-dom";
+import LatestNews from "./Menu/LatestNews";
+import bountyPortal from "../../assets/Menubar/Resource/bountyPortal.svg";
 
 const useStyles = makeStyles((theme) => ({
   menubar: {
@@ -25,19 +27,24 @@ const Navbar = () => {
   const classes = useStyles();
 
   return (
-    <div className="nav-container">
-      <Link className="routerlink" to="/">
-        <Logo />
-      </Link>
-      <div className={classes.menubar}>
-        <Link className="routerlink" to="/about">
-          <AboutMenu />
+    <>
+      <div className="nav-container">
+        <Link className="routerlink" to="/">
+          <Logo />
         </Link>
-        <CommunityMenu />
-        <ResourceMenu />
+        <div className={classes.menubar}>
+          <Link className="routerlink" to="/about">
+            <AboutMenu />
+          </Link>
+          <Link className="routerlink" to="/news">
+            <LatestNews />
+          </Link>
+          <CommunityMenu />
+          <ResourceMenu />
+        </div>
+        <GetGhostBtn />
       </div>
-      <GetGhostBtn />
-    </div>
+    </>
   );
 };
 

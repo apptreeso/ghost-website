@@ -2,19 +2,20 @@ import React from "react";
 
 // MUI stuff
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography,  Button } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import FontSize from "../../../../utils/FontSize";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: FontSize.l,
-    width: 453
+    width: 453,
+    lineHeight: 1.2,
   },
   description: {
     fontSize: FontSize.m,
     color: theme.palette.secondary.textColor,
     marginTop: 25,
-    width: 402
+    width: 402,
   },
   btnStart: {
     height: 65,
@@ -25,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #fff",
     fontSize: FontSize.size16,
     textTransform: "capitalize",
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255, 0.15)",
+    },
   },
 }));
 

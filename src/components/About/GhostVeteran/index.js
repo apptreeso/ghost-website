@@ -5,17 +5,20 @@ import FontSize from "../../../utils/FontSize";
 
 import arrowright from "../../../assets/githubupdate/arrowright.svg";
 import designDeveloperRightImg from "../../../assets/About/GhostVeteran/GhostVeteranImg.svg";
+import BtnWithArrow from "../../../utils/BtnWithArrow";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: FontSize.m,
     color: theme.palette.secondary.main,
     fontWeight: "bold",
+    lineHeight: 1.2
   },
   subtitle: {
     fontSize: FontSize.l,
     paddingTop: 20,
     width: 490,
+    lineHeight: 1.2
   },
   description: {
     fontSize: FontSize.m,
@@ -23,26 +26,12 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.textColor,
     paddingTop: 22,
   },
-  btnarrow: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 48,
-  },
-  btn: {
-    marginRight: 15,
-    fontSize: FontSize.size16,
-    color: theme.palette.secondary.textColor,
-  },
-  arrow: {
-    cursor: "pointer",
-  },
 }));
 
 const GhostVeteran = () => {
   const classes = useStyles();
   return (
-    <div className="maincontainer">
-      <div className="container">
+      <div className="container" style={{paddingBottom: 160}}>
         <Grid container>
           <Grid item md={6} sm={12} xs={12}>
             <Typography className={classes.title}>Ghost Veterans</Typography>
@@ -58,19 +47,13 @@ const GhostVeteran = () => {
                 transaction fees using the staking features for GHOST.
               </Typography>
             </div>
-            <div className={classes.btnarrow}>
-              <Typography className={classes.btn}>Start now</Typography>
-              <IconButton>
-                <img src={arrowright} alt="arrow right" />
-              </IconButton>
-            </div>
+            <BtnWithArrow title="Start now" />
           </Grid>
           <Grid item md={6} sm={12} xs={12}>
             <img src={designDeveloperRightImg} alt="designDeveloperRightImg" />
           </Grid>
         </Grid>
       </div>
-    </div>
   );
 };
 

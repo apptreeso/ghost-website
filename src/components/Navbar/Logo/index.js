@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 import logo from "../../../assets/ghostlogo-white.png";
+import FontSize from "../../../utils/FontSize";
 
 const useStyles = makeStyles((theme) => ({
   logoArea: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoText: {
     marginLeft: 17,
-    fontSize: 25,
+    fontSize: FontSize.size25,
   },
 }));
 

@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     marginTop: 35,
+    paddingBottom: 315,
   },
   button: {
     height: 52,
@@ -45,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: FontSize.size16,
     textTransform: "capitalize",
     marginRight: 30,
+    "&:hover": {
+      backgroundColor: "rgba(61,169,252, 0.15)",
+    },
   },
   discordIcon: {
     marginTop: 5,
@@ -54,16 +58,15 @@ const useStyles = makeStyles((theme) => ({
 const JoinCommunity = () => {
   const classes = useStyles();
   return (
-    <div className="maincontainer" style={{ backgroundColor: "#1A1A1F" }}>
+    <div>
       <div
         style={{
           backgroundImage: `url(${joinCommunityBg})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          height: 750,
         }}
       >
-        <div className="container" style={{ paddingTop: 200 }}>
+        <div className="container" style={{ paddingTop: 350 }}>
           <div className={classes.mainarea}>
             <img src={logo} alt="logo" className={classes.logo} />
             <Typography className={classes.title}>

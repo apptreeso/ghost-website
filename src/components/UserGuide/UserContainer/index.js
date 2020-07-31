@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
     padding: 50,
     boxSizing: "border-box",
     backdropFilter: "blur(15px)",
+    boxShadow: "none",
+    border: "1px solid #2D2D2D"
   },
   cardLogo: {
     marginTop: 65,

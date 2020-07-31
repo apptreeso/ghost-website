@@ -13,21 +13,19 @@ import DiscordIcon from "../../../../assets/privacyfocused/privacyDiscordIcon.pn
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: Font.xl,
-    // fontWeight: "bold",
-    // color: 'red'
+    fontWeight: "bold",
+    lineHeight: 1.2,
   },
   title2: {
     fontSize: Font.xl,
-    fontWeight: 'normal'
+    fontWeight: "normal",
+    width: 700,
   },
   description: {
     fontSize: Font.m,
     width: 430,
     color: theme.palette.secondary.textColor,
-    marginTop: 20,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    // lineHeight: 1
+    paddingTop: 50,
   },
   btnarea: {
     display: "flex",
@@ -38,10 +36,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 8,
     marginTop: 50,
     marginRight: 20,
-    border: "1px solid #fff",
+    border: "1px solid #FFFFFF",
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255, 0.15)",
+    },
   },
   socialIconGroup: {
-    marginTop: 55,
+    marginTop: 40,
   },
 }));
 
@@ -49,12 +50,10 @@ const PrivacyLeftSide = () => {
   const classes = useStyles();
   return (
     <div>
-      <div>
-        <h1 className={classes.title}>
-          Privacy-focused &amp;
-        </h1>
-          <span className={classes.title2}>Decentralized Ecosystem</span>
-      </div>
+      <Typography className={classes.title}>
+        Privacy-focused &amp;{" "}
+        <span className={classes.title2}>Decentralized Ecosystem</span>
+      </Typography>
       <Typography className={classes.description}>
         Proof of Stake privacy coin to help make you nothing but a "ghost" when
         transacting online!
@@ -68,7 +67,6 @@ const PrivacyLeftSide = () => {
           }}
           title="Download Ghost Wallet"
         />
-
         <Button variant="contained" color="primary" className={classes.btn}>
           <GitHubIcon style={{ marginRight: 10 }} />
           Ghost Github

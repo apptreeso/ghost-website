@@ -6,6 +6,9 @@ import LatestNews from "./LatestNews";
 import USDStable from "./USDStable";
 import NewsContainer from "./NewsContainer";
 
+import Footer from "../Footer";
+import FooterDivider from "../../utils/FooterDivider";
+
 const useStyles = makeStyles((theme) => ({}));
 
 const News = () => {
@@ -15,6 +18,8 @@ const News = () => {
       <LatestNews />
       <USDStable />
       <NewsContainer />
+      <FooterDivider />
+      <Footer />
     </Fragment>
   );
 };

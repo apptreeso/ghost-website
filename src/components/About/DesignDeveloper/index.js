@@ -5,36 +5,26 @@ import FontSize from "../../../utils/FontSize";
 
 import arrowright from "../../../assets/githubupdate/arrowright.svg";
 import designDeveloperRightImg from "../../../assets/About/designdeveloper/designDeveloperRightImg.svg";
+import BtnWithArrow from "../../../utils/BtnWithArrow";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: FontSize.m,
     color: theme.palette.secondary.main,
     fontWeight: "bold",
+    lineHeight: 1.2
   },
   subtitle: {
     fontSize: FontSize.l,
     paddingTop: 20,
     width: 410,
+    lineHeight: 1.2
   },
   description: {
     fontSize: FontSize.m,
     width: 400,
     color: theme.palette.secondary.textColor,
     paddingTop: 22,
-  },
-  btnarrow: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 48,
-  },
-  btn: {
-    marginRight: 15,
-    fontSize: FontSize.size16,
-    color: theme.palette.secondary.textColor,
-  },
-  arrow: {
-    cursor: "pointer",
   },
 }));
 
@@ -60,12 +50,7 @@ const DesignDeveloper = () => {
                 payments functionality.
               </Typography>
             </div>
-            <div className={classes.btnarrow}>
-              <Typography className={classes.btn}>Read the docs</Typography>
-              <IconButton>
-                <img src={arrowright} alt="arrow right" />
-              </IconButton>
-            </div>
+            <BtnWithArrow title="Read the docs" />
           </Grid>
           <Grid item md={6} sm={12} xs={12}>
             <img src={designDeveloperRightImg} alt="designDeveloperRightImg" />

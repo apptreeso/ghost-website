@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ghostwallet from "../../../assets/Menubar/getghostbtn/ghostwallet.svg";
 import exchange from "../../../assets/Menubar/getghostbtn/exchange.svg";
 import FontSize from "../../../utils/FontSize";
+import HoverExtrapart from "../../../utils/HoverExtrapart";
 
 const useStyles = makeStyles((theme) => ({
   getbtnarea: {
@@ -16,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     width: 120,
     cursor: "pointer",
     textTransform: "capitalize",
+    "&:hover": {
+      backgroundColor: "rgb(239,69,101, 0.15)",
+    },
   },
 
   container: {
@@ -49,66 +53,66 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   ghostwallet: { marginRight: 25 },
+  hoverEffect: {
+    cursor: 'pointer',
+    color: theme.palette.secondary.textColor,
+    "&:hover": {
+      color: theme.palette.secondary.main,
+    }
+  },
   title: {
     fontSize: FontSize.m,
-    color: theme.palette.secondary.textColor,
   },
   description: {
     fontSize: FontSize.sm,
-    color: theme.palette.secondary.textColor,
   },
 }));
 
 const GetGhostBtn = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
   return (
     <div className={classes.getbtnarea}>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.getbtn}
-        onClick={handleToggle}
-      >
-        Get Ghost
-      </Button>
-      {open && (
-        <div className={classes.container}>
-          <div className={classes.clippath} />
-          <div className={classes.getList} style={{ marginBottom: 30 }}>
-            <img
-              src={ghostwallet}
-              alt="ghost wallet"
-              className={classes.ghostwallet}
-            />
-            <div>
-              <Typography className={classes.title}>Ghost Wallet</Typography>
-              <Typography className={classes.description}>
-                Ghost Desktop Client v2.0.7
-              </Typography>
+      <div className="menu">
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.getbtn}
+        >
+          Get Ghost
+        </Button>
+        <div className="dropdown-menu">
+          <div className={classes.container}>
+            <HoverExtrapart style={{ width: 350 }} />
+            <div className={classes.clippath} />
+            <div className={classes.getList} style={{ marginBottom: 30 }}>
+              <img
+                src={ghostwallet}
+                alt="ghost wallet"
+                className={classes.ghostwallet}
+              />
+              <div className={classes.hoverEffect}>
+                <Typography className={classes.title}>Ghost Wallet</Typography>
+                <Typography className={classes.description}>
+                  Ghost Desktop Client v2.0.7
+                </Typography>
+              </div>
             </div>
-          </div>
-          <div className={classes.getList} style={{ marginBottom: 30 }}>
-            <img
-              src={exchange}
-              alt="exchange"
-              className={classes.ghostwallet}
-            />
-            <div>
-              <Typography className={classes.title}>Exchanges</Typography>
-              <Typography className={classes.description}>
-                Malesuada gravida tincidunt
-              </Typography>
+            <div className={classes.getList} style={{ marginBottom: 30 }}>
+              <img
+                src={exchange}
+                alt="exchange"
+                className={classes.ghostwallet}
+              />
+              <div className={classes.hoverEffect}>
+                <Typography className={classes.title}>Exchanges</Typography>
+                <Typography className={classes.description}>
+                  Malesuada gravida tincidunt
+                </Typography>
+              </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

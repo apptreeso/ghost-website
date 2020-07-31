@@ -22,41 +22,40 @@ const useStyles = makeStyles((theme) => ({
   },
   aboutcontainer: {
     textAlign: "center",
-    paddingBottom: 218
+    paddingBottom: 218,
   },
   title: {
     fontSize: FontSize.m,
     color: theme.palette.secondary.main,
     fontWeight: "bold",
+    lineHeight: 1.2,
   },
   subtitle: {
     fontSize: FontSize.xl,
-    paddingTop: 5
+    paddingTop: 5,
+    lineHeight: 1.2,
   },
   subtitle2: {
     fontSize: FontSize.xl,
     fontWeight: "bold",
+    lineHeight: 1.2,
   },
   description: {
     fontSize: FontSize.m,
     width: 487,
     color: theme.palette.secondary.textColor,
     paddingTop: 22,
-    margin: "0 auto"
+    margin: "0 auto",
   },
 }));
 
 const AboutUs = () => {
   const classes = useStyles();
   return (
-    <div
-      className="maincontainer"
-      style={{ paddingTop: 95, position: "relative" }}
-    >
+    <div style={{ paddingTop: 95, position: "relative" }}>
       <div
         style={{
           backgroundImage: `url(${aboutbglefttop})`,
-          // backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >

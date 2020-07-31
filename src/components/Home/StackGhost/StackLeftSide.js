@@ -39,6 +39,11 @@ const PrettoSlider = withStyles({
 })(Slider);
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    paddingTop: 250,
+    paddingBottom: 250,
+    position: "relative",
+  },
   cardsize: {
     height: 400,
     width: 540,
@@ -48,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 60,
     marginRight: 120,
     boxSizing: "border-box",
+    boxShadow: "none",
     color: theme.palette.primary.textColor,
   },
   cardTitle: {
@@ -74,24 +80,25 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 3,
   },
   sliderarea: {
-    marginTop: 25,
+    paddingTop: 25,
   },
   slidertext: {
     color: theme.palette.secondary.textColor,
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingTop: 10,
   },
   divider: {
     backgroundColor: "#72757E",
-    marginTop: 25,
+    marginTop: 18,
     opacity: 0.2,
   },
   priceMonthReward: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 30,
+    marginTop: 26,
     color: theme.palette.secondary.textColor,
   },
   price: {},
@@ -107,14 +114,72 @@ const useStyles = makeStyles((theme) => ({
     color: "#27AE60",
     fontSize: FontSize.ml,
   },
-  reward: {},
+  eachMonthCard: {
+    position: "absolute",
+    top: 570,
+    left: 145,
+    backgroundColor: "#27272D",
+    width: 220,
+    height: 185,
+    borderRadius: 10,
+    zIndex: 1000,
+    padding: 30,
+    boxSizing: "border-box",
+  },
+  eachMonthTimePrice: {
+    display: "flex",
+    alignItems: "center",
+    paddingBottom: 8,
+  },
+  eachMonthTime: {
+    color: "#94A1B2",
+    fontSize: 14,
+    paddingRight: 15,
+  },
+  eachMonthPrice: {
+    color: "#94A1B2",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#27AE60",
+  },
 }));
 
-const StackLeftSide = () => {
+const StackLeftSide = (props) => {
   const classes = useStyles();
 
+  
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   return (
-    <>
+    <div className={classes.container}>
+      {open && (
+        <div className={classes.eachMonthCard}>
+          <div className={classes.eachMonthTimePrice}>
+            <Typography className={classes.eachMonthTime}>Еach Year</Typography>
+            <Typography className={classes.eachMonthPrice}>$ 3.87</Typography>
+          </div>
+          <div className={classes.eachMonthTimePrice}>
+            <Typography className={classes.eachMonthTime}>
+              Each Month
+            </Typography>
+            <Typography className={classes.eachMonthPrice}>$ 0.32</Typography>
+          </div>
+          <div className={classes.eachMonthTimePrice}>
+            <Typography className={classes.eachMonthTime}>Еach Week</Typography>
+            <Typography className={classes.eachMonthPrice}>$ 0.32</Typography>
+          </div>
+          <div className={classes.eachMonthTimePrice}>
+            <Typography className={classes.eachMonthTime}>Еach Day</Typography>
+            <Typography className={classes.eachMonthPrice}>$ 0.01</Typography>
+          </div>
+        </div>
+      )}
       <Card className={classes.cardsize}>
         <Typography className={classes.cardTitle}>
           Estimate your rewards
@@ -131,6 +196,10 @@ const StackLeftSide = () => {
             valueLabelDisplay="auto"
             aria-label="pretto slider"
             defaultValue={20}
+            style={{
+              margin: 0,
+              padding: 0,
+            }}
           />
           <div className={classes.slidertext}>
             <Typography>0</Typography>
@@ -147,7 +216,28 @@ const StackLeftSide = () => {
             </div>
           </div>
           <div>
-            <Typography>Each Month</Typography>
+            <div
+              onClick={handleToggle}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <Typography style={{ marginRight: 7 }}>Each Month</Typography>
+              <svg
+                width="8"
+                height="6"
+                viewBox="0 0 8 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.67063 5.8272C3.70733 5.88049 3.75644 5.92407 3.81372 5.95417C3.871 5.98427 3.93475 6 3.99946 6C4.06417 6 4.12791 5.98427 4.1852 5.95417C4.24248 5.92407 4.29158 5.88049 4.32828 5.8272L7.92857 0.627557C7.97024 0.567584 7.99468 0.497339 7.99923 0.424453C8.00377 0.351568 7.98826 0.27883 7.95436 0.214143C7.92047 0.149456 7.86949 0.0952928 7.80697 0.0575393C7.74445 0.0197859 7.67278 -0.00011453 7.59974 4.95827e-07H0.399176C0.326308 0.000301439 0.2549 0.0204577 0.192632 0.0583016C0.130364 0.0961456 0.079592 0.150245 0.0457757 0.214783C0.0119594 0.279321 -0.00362155 0.351854 0.000708374 0.424584C0.0050383 0.497313 0.0291153 0.567486 0.0703501 0.627557L3.67063 5.8272Z"
+                  fill="#94A1B2"
+                />
+              </svg>
+            </div>
             <Typography className={classes.monthPrice}>$ 15</Typography>
           </div>
           <div className={classes.reward}>
@@ -156,7 +246,7 @@ const StackLeftSide = () => {
           </div>
         </div>
       </Card>
-    </>
+    </div>
   );
 };
 

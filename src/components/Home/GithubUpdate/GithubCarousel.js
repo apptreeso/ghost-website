@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.textColor,
     marginTop: 55,
     marginRight: 20,
+    boxShadow: "none",
   },
   titleLogo: {
     display: "flex",
@@ -86,7 +87,8 @@ const arr = [
   // {
   //   title: "ghost-coldstakepool",
   //   time: "Updated 3 hours ago",
-  //   description: "Generic altcoin DNS seeder. Easy configuration for virtually any cryptocurrency",
+  //   description:
+  //     "Generic altcoin DNS seeder. Easy configuration for virtually any cryptocurrency",
   // },
 ];
 

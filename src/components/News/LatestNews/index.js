@@ -38,15 +38,22 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
 
+  titlearea: {
+    position: "relative",
+    width: 340,
+    margin: "0 auto"
+  },
+
   title: {
     fontSize: FontSize.xl,
-    width: 340,
     margin: "0 auto",
+    lineHeight: 1.2
+
   },
   ampersand: {
     position: "absolute",
-    top: 110,
-    left: 373,
+    top: 85,
+    left: 18,
   },
   subtitle2: {
     fontSize: FontSize.xl,
@@ -92,7 +99,7 @@ const LatestNews = () => {
       <div>
         <Grid container className="container">
           <Grid item md={12} sm={12} xs={12} className={classes.aboutcontainer}>
-            <div style={{ position: "relative" }}>
+            <div className={classes.titlearea}>
               <Typography className={classes.title}>
                 Latest news Updates
               </Typography>

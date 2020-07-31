@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import ResourceTopPart from "./ResourceTopPart";
 import ResourceBottomPart from "./ResourceBottomPart";
+import HoverExtrapart from "../../../../utils/HoverExtrapart";
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
@@ -42,11 +43,10 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     position: "absolute",
     top: 50,
-    left: -95,
+    left: -50,
     width: 500,
     height: 330,
     borderRadius: 12,
-    // overflow: "hidden",
     zIndex: 100,
   },
 
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(39, 39, 45, 0.8)",
     position: "absolute",
     top: -15,
-    right: 153,
+    right: 90,
     width: 8,
     height: 13,
     zIndex: -1,
@@ -82,28 +82,20 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
   },
+  hover: {},
 }));
 
 const ResourceMenu = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+
   return (
-    <div>
-      <Button
-        color="inherit"
-        className={classes.navbarText}
-        onClick={handleToggle}
-      >
+    <div className="menu">
+      <Button color="inherit" className={classes.navbarText}>
         Resources
       </Button>
-      {open && (
+      <div className="dropdown-menu">
         <div className={classes.container}>
+          <HoverExtrapart style={{ width: 500 }} />
           <div className={classes.clippath} />
 
           <div className={classes.topPart}>
@@ -113,7 +105,7 @@ const ResourceMenu = () => {
             <ResourceBottomPart />
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

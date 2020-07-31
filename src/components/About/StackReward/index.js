@@ -5,6 +5,7 @@ import FontSize from "../../../utils/FontSize";
 
 import arrowright from "../../../assets/githubupdate/arrowright.svg";
 import stackRewardImg from "../../../assets/About/stackReward/stackRewardImg.png";
+import BtnWithArrow from "../../../utils/BtnWithArrow";
 
 const useStyles = makeStyles((theme) => ({
   stackContainer: {
@@ -15,30 +16,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: FontSize.m,
     color: theme.palette.secondary.main,
     fontWeight: "bold",
+    lineHeight: 1.2
   },
   subtitle: {
     fontSize: FontSize.l,
     paddingTop: 20,
     width: 470,
+    lineHeight: 1.2
   },
   description: {
     fontSize: FontSize.m,
     width: 420,
     color: theme.palette.secondary.textColor,
     paddingTop: 31,
-  },
-  btnarrow: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 48,
-  },
-  btn: {
-    marginRight: 15,
-    fontSize: FontSize.size16,
-    color: theme.palette.secondary.textColor,
-  },
-  arrow: {
-    cursor: "pointer",
   },
 }));
 
@@ -70,12 +60,7 @@ const StackReward = () => {
                 future rewards.
               </Typography>
             </div>
-            <div className={classes.btnarrow}>
-              <Typography className={classes.btn}>Start now</Typography>
-              <IconButton>
-                <img src={arrowright} alt="arrow right" />
-              </IconButton>
-            </div>
+            <BtnWithArrow title="Start now" />
           </Grid>
         </Grid>
       </div>

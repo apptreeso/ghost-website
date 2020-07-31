@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
   copyright: {
     fontSize: FontSize.size13,
     color: theme.palette.secondary.textColor,
-    paddingTop: 200,
-    paddingBottom: 50
+    paddingTop: 116,
+    paddingBottom: 50,
   },
   divider: {
     backgroundColor: "#C4C4C4",
@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Footer = () => {
+const Footer = (props) => {
   const classes = useStyles();
   return (
-    <div className="maincontainer" style={{ backgroundColor: "#16161A" }}>
-      <div className="container" style={{ paddingTop: 100 }}>
-        <Divider className={classes.divider} />
+    <div style={{ ...props.style }}>
+      <div className="container">
+        {/* <Divider className={classes.divider} /> */}
         <Grid container>
           <Grid item md={6} sm={12} xs={12}>
             <FooterLeftSide />

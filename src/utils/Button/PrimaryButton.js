@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     height: 65,
     width: 250,
     borderRadius: 8,
+    "&:hover": {
+      backgroundColor: "rgb(239,69,101, 0.15)",
+    },
   },
 }));
 
@@ -16,7 +19,7 @@ const PrimaryButton = (props) => {
   return (
     <div>
       <Button
-        variant="contained"                           
+        variant="contained"
         color="secondary"
         className={classes.btn}
         style={{ ...props.style }}

@@ -6,6 +6,8 @@ import AboutUs from "./AboutUs";
 import DesignDeveloper from "./DesignDeveloper";
 import StackReward from "./StackReward";
 import GhostVeteran from "./GhostVeteran";
+import Footer from "../Footer";
+import FooterDivider from "../../utils/FooterDivider";
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -17,6 +19,8 @@ const About = () => {
       <DesignDeveloper />
       <StackReward />
       <GhostVeteran />
+      <FooterDivider />
+      <Footer />
     </Fragment>
   );
 };

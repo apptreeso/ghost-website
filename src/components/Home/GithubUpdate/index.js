@@ -11,8 +11,6 @@ import FontSize from "../../../utils/FontSize";
 import arrowleft from "../../../assets/githubupdate/arrowleft.svg";
 import arrowright from "../../../assets/githubupdate/arrowright.svg";
 
-import ArrowRight from "@material-ui/icons/ArrowRightAlt";
-
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: FontSize.l,
@@ -27,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "flex-end",
     marginRight: 170,
-    marginTop: 66
+    marginTop: 66,
   },
   rightarrow: {
     cursor: "pointer",
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const GithubUpdate = () => {
   const classes = useStyles();
   return (
-    <div className="maincontainer" style={{ paddingTop: 30 }}>
+    <div style={{ paddingTop: 30 }}>
       <div
         style={{
           backgroundImage: `url(${githubupdateBg})`,
@@ -65,7 +63,7 @@ const GithubUpdate = () => {
               Stay informed about all latest news
             </Typography>
           </div>
-          <div style={{ paddingBottom: 270 }}>
+          <div>
             <GithubCarousel />
             {/* progress bar  */}
             <div className={classes.progress}>

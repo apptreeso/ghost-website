@@ -8,8 +8,6 @@ import StackGhost from "./StackGhost";
 import GithubUpdate from "./GithubUpdate";
 import GhostCreatedDistributed from "./GhostCreatedDistributed";
 import GhostReward from "./GhostReward";
-import DiveDeeper from "./DiveDeeper";
-import JoinCommunity from "./JoinCommunity";
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -23,8 +21,6 @@ const Home = () => {
       <GithubUpdate />
       <GhostCreatedDistributed />
       <GhostReward />
-      <DiveDeeper />
-      <JoinCommunity />
     </Fragment>
   );
 };

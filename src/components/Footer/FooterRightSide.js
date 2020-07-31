@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: FontSize.m,
     width: 160,
     marginBottom: 16,
+    lineHeight: 1.2,
   },
   nav: {
     display: "flex",

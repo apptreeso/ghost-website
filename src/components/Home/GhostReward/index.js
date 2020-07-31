@@ -13,6 +13,7 @@ import RewardLeftSide from "./RewardSection/RewardLeftSide";
 import RewardRightSide from "./RewardSection/RewardRightSide";
 import DiveDeeper from "../DiveDeeper";
 import JoinCommunity from "../JoinCommunity";
+import Footer from "../../Footer";
 
 const useStyles = makeStyles((theme) => ({
   ghostrewardbgVector: {
@@ -30,43 +31,42 @@ const useStyles = makeStyles((theme) => ({
 const GhostReward = () => {
   const classes = useStyles();
   return (
-    <div
-      className="maincontainer"
-      style={{ paddingTop: 50, position: "relative" }}
-    >
-      <div
-        style={{
-          backgroundImage: `url(${ghostrewardbg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          minHeight: 783,
-        }}
-      >
-        <img
-          src={ghostrewardbgVector}
-          alt="Overview"
-          className={classes.ghostrewardbgVector}
-        />
-        {/* <img
+    <div>
+      <div style={{ paddingTop: 50, position: "relative" }}>
+        <div
+          style={{
+            backgroundImage: `url(${ghostrewardbg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            minHeight: 783,
+          }}
+        >
+          <img
+            src={ghostrewardbgVector}
+            alt="Overview"
+            className={classes.ghostrewardbgVector}
+          />
+          {/* <img
           src={joinCommunityBg}
           alt="Overview"
           className={classes.joinCommunityBg}
         /> */}
-        <div
-          className="container"
-          style={{ paddingTop: 300 }}
-        >
-          <Grid container>
-            <Grid item md={6} sm={12} xs={12}>
-              <RewardLeftSide />
-            </Grid>
+          <div className="container" style={{ paddingTop: 300 }}>
+            <Grid container>
+              <Grid item md={6} sm={12} xs={12}>
+                <RewardLeftSide />
+              </Grid>
 
-            <Grid item md={6} sm={12} xs={12}>
-              <RewardRightSide />
+              <Grid item md={6} sm={12} xs={12}>
+                <RewardRightSide />
+              </Grid>
+              {/* <DiveDeeper /> */}
+              {/* <JoinCommunity /> */}
             </Grid>
-            {/* <DiveDeeper /> */}
-            {/* <JoinCommunity /> */}
-          </Grid>
+          </div>
+          <DiveDeeper />
+          <JoinCommunity />
+          <Footer />
         </div>
       </div>
     </div>

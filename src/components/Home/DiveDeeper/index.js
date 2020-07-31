@@ -69,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #fff",
     fontSize: FontSize.size16,
     textTransform: "capitalize",
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255, 0.15)",
+    },
   },
 }));
 
@@ -87,17 +90,14 @@ const arr = [
 const DiveDeeper = () => {
   const classes = useStyles();
   return (
-    <div
-      className="rewardcontainer"
-      style={{ backgroundColor: "#1A1A1F", paddingTop: 62}}
-    >
+    <div style={{ paddingTop: 160 }}>
+      <div className="container">
       <div className={classes.header}>
         <Typography className={classes.title}>Want to dive deeper?</Typography>
         <Typography className={classes.subtitle}>
           Learn more about ghost community
         </Typography>
       </div>
-      <div className="container">
         <Grid container spacing={2} style={{ paddingTop: 62 }}>
           {arr.map((data) => (
             <Grid item md={4} sm={6} xs={12}>

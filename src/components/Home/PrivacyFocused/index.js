@@ -3,18 +3,18 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
 import PrivacyLeftSide from "./PrivacyLeftSide";
-import PrivacyRightSide from "./PrivacyRightSide";
-import FontSize from "../../../utils/FontSize"
+import FontSize from "../../../utils/FontSize";
 
+import speedbgImg from "../../../assets/privacyfocused/privacyFocusMainImg.svg";
+import overview from "../../../assets/privacyfocused/rightSideImage/overview.png";
 
 const useStyles = makeStyles((theme) => ({
   privacycontainer: {
     paddingTop: 70,
-    position: 'relative'
+    position: "relative",
   },
   exchange: {
     height: 73,
-    width: 850,
     marginRight: 20,
     marginTop: 117,
   },
@@ -33,16 +33,21 @@ const useStyles = makeStyles((theme) => ({
 const PrivacyFocused = () => {
   const classes = useStyles();
   return (
-    <div className="maincontainer">
-      <Grid className="container">
+    <div
+      style={{
+        backgroundImage: `url(${speedbgImg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right",
+      }}
+    >
+      <div className="container">
         <Grid container className={classes.privacycontainer}>
-          <Grid item lg={8} md={12} sm={12} xs={12}>
+          <Grid item lg={8} md={6} sm={6} xs={6}>
             <PrivacyLeftSide />
           </Grid>
-          <Grid item lg={4} md={12} sm={12} xs={12}>
-            <PrivacyRightSide />
-          </Grid>
         </Grid>
+      </div>
+      <div className="container">
         <Grid item sm={12} xs={12}>
           <div className={classes.exchange}>
             <Typography className={classes.exchangeText}>
@@ -57,7 +62,7 @@ const PrivacyFocused = () => {
             </div>
           </div>
         </Grid>
-      </Grid>
+      </div>
     </div>
   );
 };

@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
   defiTitle: {
     fontSize: FontSize.size25,
     marginTop: 21,
+    fontWeight: "bold",
+    lineHeight: 1.2,
+    width: 330
   },
   defiDescription: {
     fontSize: FontSize.m,
@@ -79,7 +82,7 @@ const arr = [1, 2, 3, 4, 5, 6];
 const NewsContainer = () => {
   const classes = useStyles();
   return (
-    <div className="rewardcontainer" style={{ paddingTop: 62 }}>
+    <div className="rewardcontainer" style={{ paddingTop: 62, paddingBottom: 94 }}>
       <div className="container">
         <Grid container spacing={2} style={{ paddingTop: 62 }}>
           {arr.map((data) => (

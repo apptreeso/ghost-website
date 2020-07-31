@@ -23,13 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SpeedSecurity = () => {
+const StackGhost = () => {
   const classes = useStyles();
+
   return (
-    <div
-      className="maincontainer"
-      style={{ paddingTop: 125, position: "relative" }}
-    >
+    <div style={{ paddingTop: 115, position: "relative" }}>
       <div
         style={{
           backgroundImage: `url(${StackGhostBg})`,
@@ -64,4 +62,4 @@ const SpeedSecurity = () => {
   );
 };
 
-export default SpeedSecurity;
+export default StackGhost;

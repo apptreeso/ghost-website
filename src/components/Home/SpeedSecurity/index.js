@@ -19,39 +19,47 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: FontSize.l,
+    fontWeight: "bold",
   },
   description: {
     color: "#94A1B2",
     fontSize: FontSize.m,
     width: 510,
-    marginLeft: -60,
+    marginLeft: -40,
+    paddingTop: 10,
   },
   cardarea: {
     paddingTop: 150,
   },
   cardsize: {
-    height: 420,
-    width: 255,
+    minHeight: 420,
+    minWidth: 255,
     backgroundColor: "rgba(26, 26, 31, 0.7)",
     borderRadius: 15,
     marginRight: 30,
-    backdropFilter: "blur(10px)"
+    backdropFilter: "blur(18px)",
+    boxShadow: "none",
+    border: "1px solid #2D2D2D",
   },
-  cardLogo: {
-    marginTop: 65,
+  cardContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    paddingLeft: 38,
+    paddingRight: 47,
+    paddingTop: 65
   },
   cardTitle: {
     color: "#fff",
     fontSize: FontSize.ml,
-    marginTop: 50,
-    marginBottom: 20,
-    maxWidth: 235,
+    // maxWidth: 235,
+    paddingTop: 50
   },
   cardDescription: {
     fontSize: FontSize.sm,
     color: "#94A1B2",
-    width: 180,
-    marginLeft: 37.5,
+    // width: 180,
+    paddingTop: 20
   },
 }));
 
@@ -82,10 +90,10 @@ const arr = [
   },
 ];
 
-const StackGhost = () => {
+const SpeedSecurity = () => {
   const classes = useStyles();
   return (
-    <div className="maincontainer">
+    <div style={{ paddingTop: 200 }}>
       <div
         style={{
           backgroundImage: `url(${speedbgImg})`,
@@ -106,20 +114,29 @@ const StackGhost = () => {
           </Grid>
           {/* card area  */}
 
-          <Grid container spacing={2} className={classes.cardarea} style={{ textAlign: "center" }}>
+          <Grid
+            container
+            spacing={2}
+            className={classes.cardarea}
+            style={{ textAlign: "center" }}
+          >
             {arr.map((data) => (
               <Grid item md={3} sm={6} xs={6}>
-                <Card className={classes.cardsize}>
-                  <img
-                    src={data.logo}
-                    alt="Overview"
-                    className={classes.cardLogo}
-                  />
-                  <Typography className={classes.cardTitle}>{data.title}</Typography>
-                  <Typography className={classes.cardDescription}>
-                    {data.description}
-                  </Typography>
-                </Card>
+                <div style={{ position: "relative" }}>
+                  <div className={classes.cardsize}></div>
+                  <div className={classes.cardContainer}>
+                    <img
+                      src={data.logo}
+                      alt="Logo"
+                    />
+                    <Typography className={classes.cardTitle}>
+                    {data.title}
+                    </Typography>
+                    <Typography className={classes.cardDescription}>
+                      {data.description}
+                    </Typography>
+                  </div>
+                </div>
               </Grid>
             ))}
           </Grid>
@@ -129,5 +146,4 @@ const StackGhost = () => {
   );
 };
 
-export default StackGhost;
-                                                                                      
+export default SpeedSecurity;

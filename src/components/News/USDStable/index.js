@@ -13,30 +13,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 25,
     paddingLeft: 70,
   },
-  title: {
-    fontSize: FontSize.m,
-    color: theme.palette.secondary.main,
-    fontWeight: "bold",
-  },
-  title: {
-    fontSize: 33,
-    paddingTop: 15,
-    width: 550,
-  },
-  description: {
-    fontSize: FontSize.m,
-    width: 400,
-    color: theme.palette.secondary.textColor,
-    paddingTop: 15,
-  },
-  time: {
-    fontSize: FontSize.sm,
-    color: "#72757E",
-    paddingTop: 23
-  },
-  btn: {
-    marginTop: 23,
-  },
   button: {
     backgroundColor: "rgba(239,69,101, 0.1)",
     border: "none",
@@ -51,6 +27,25 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 10,
     marginBottom: 10,
   },
+  title: {
+    fontSize: 33,
+    paddingTop: 15,
+    width: 450,
+    fontWeight: "bold",
+    lineHeight: 1.2,
+  },
+  description: {
+    fontSize: FontSize.m,
+    width: 400,
+    color: theme.palette.secondary.textColor,
+    paddingTop: 12,
+  },
+  time: {
+    fontSize: FontSize.sm,
+    color: "#72757E",
+    paddingTop: 20
+  },
+
 }));
 
 const USDStable = () => {
